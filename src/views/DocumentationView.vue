@@ -1,140 +1,129 @@
 <template>
-  <div class="min-h-screen bg-gray-50">
-    <nav class="bg-white shadow-sm sticky top-0 z-50">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between h-16">
-          <div class="flex">
-            <div class="flex-shrink-0 flex items-center">
-              <h1 class="text-2xl font-bold text-gray-900">Custom Compiler Documentation</h1>
-            </div>
-          </div>
-          <div class="flex items-center">
-            <router-link
-              to="/"
-              class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700"
-            >
-              Go to Compiler
-            </router-link>
-          </div>
-        </div>
+  <div class="container mx-auto px-6 py-8">
+    <!-- Header -->
+    <h1 class="text-4xl font-bold text-gray-800 mb-6">MinLang Documentation</h1>
+
+    <!-- Overview Section -->
+    <section class="mb-8">
+      <h2 class="text-3xl font-semibold text-gray-700 mb-4">Language Overview</h2>
+      <p class="text-gray-600 text-lg leading-relaxed">
+        MinLang is a simple programming language designed for variable declarations,
+        conditional statements, loops, and basic output. This documentation outlines its
+        core syntax, compiler phases, and operational semantics.
+      </p>
+    </section>
+
+    <!-- Language Features -->
+    <section class="mb-8">
+      <h2 class="text-3xl font-semibold text-gray-700 mb-4">Language Features</h2>
+      <div class="bg-white shadow-md rounded-lg p-6">
+        <ul class="list-disc list-inside text-gray-600 space-y-2">
+          <li><strong>Variable Declaration:</strong> Use the <code class="text-blue-600">gimme</code> keyword.</li>
+          <li><strong>Conditional Statements:</strong> Use the <code class="text-blue-600">yo</code> and <code class="text-blue-600">nah</code> keywords.</li>
+          <li><strong>Loops:</strong> Use the <code class="text-blue-600">keepdoing</code> keyword for while loops.</li>
+          <li><strong>Output:</strong> Use the <code class="text-blue-600">say</code> keyword.</li>
+        </ul>
       </div>
-    </nav>
+    </section>
 
-    <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
-      <div class="px-4 py-6 sm:px-0">
-        <div class="bg-white shadow rounded-lg">
-          <div class="px-4 py-5 sm:p-6">
-            <div class="prose max-w-none">
-              <h2>Language Overview</h2>
-              <p>
-                This is a simple programming language with basic variable declarations, conditional
-                statements, and output capabilities.
-              </p>
-
-              <h3>Language Features</h3>
-              <ul>
-                <li><strong>Variable Declaration:</strong> Use <code>gimme</code> keyword</li>
-                <li><strong>Conditional Statements:</strong> Use <code>yo</code> keyword</li>
-                <li><strong>Output:</strong> Use <code>say</code> keyword</li>
-              </ul>
-
-              <h3>Syntax Examples</h3>
-              <pre><code>// Variable declaration
-  gimme x = 5;
-  
-  // Conditional statement
-  yo (x < 10) {
-      say "x is less than 10";
-  }</code></pre>
-
-              <h2>Compiler Phases</h2>
-
-              <h3>1. Lexical Analysis</h3>
-              <p>
-                The lexer breaks down the source code into tokens using regular expressions. It
-                identifies:
-              </p>
-              <ul>
-                <li>Keywords (gimme, yo, say)</li>
-                <li>Identifiers</li>
-                <li>Numbers</li>
-                <li>Operators</li>
-                <li>Special characters</li>
-              </ul>
-
-              <h3>2. Parsing</h3>
-              <p>
-                The parser converts the token stream into an Abstract Syntax Tree (AST). It handles:
-              </p>
-              <ul>
-                <li>Variable declarations</li>
-                <li>Assignments</li>
-                <li>Conditional statements</li>
-                <li>Print statements</li>
-              </ul>
-
-              <h3>3. Interpretation</h3>
-              <p>The interpreter executes the AST by:</p>
-              <ul>
-                <li>Managing variable scope</li>
-                <li>Evaluating expressions</li>
-                <li>Executing statements</li>
-                <li>Handling output</li>
-              </ul>
-
-              <h2>Language Reference</h2>
-
-              <h3>Keywords</h3>
-              <ul>
-                <li><code>gimme</code> - Variable declaration</li>
-                <li><code>yo</code> - Conditional statement</li>
-                <li><code>say</code> - Output statement</li>
-              </ul>
-
-              <h3>Operators</h3>
-              <ul>
-                <li><code>=</code> - Assignment</li>
-                <li><code>==</code> - Equality comparison</li>
-                <li><code>!=</code> - Inequality comparison</li>
-                <li><code><</code> - Less than</li>
-                <li><code>></code> - Greater than</li>
-                <li><code><=</code> - Less than or equal</li>
-                <li><code>>=</code> - Greater than or equal</li>
-              </ul>
-
-              <h3>Data Types</h3>
-              <ul>
-                <li>Numbers (integers)</li>
-                <li>Strings (for output)</li>
-              </ul>
-
-              <h2>Examples</h2>
-
-              <h3>Basic Program</h3>
-              <pre><code>gimme x = 5;
-  gimme y = 10;
-  yo (x < y) {
-      say "x is less than y";
-  }</code></pre>
-
-              <h3>Nested Conditions</h3>
-              <pre><code>gimme score = 85;
-  yo (score > 80) {
-      say "Great score!";
-      yo (score > 90) {
-          say "Outstanding!";
-      }
-  }</code></pre>
-            </div>
-          </div>
-        </div>
+    <!-- Compiler Phases -->
+    <section class="mb-8">
+      <h2 class="text-3xl font-semibold text-gray-700 mb-4">Compiler Phases</h2>
+      <div class="bg-white shadow-md rounded-lg p-6">
+        <table class="table-auto w-full border-collapse border border-gray-300">
+          <thead>
+            <tr>
+              <th class="border border-gray-300 px-4 py-2 text-left text-gray-700">Phase</th>
+              <th class="border border-gray-300 px-4 py-2 text-left text-gray-700">Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="border border-gray-300 px-4 py-2">Lexical Analysis</td>
+              <td class="border border-gray-300 px-4 py-2">
+                Converts the source code into tokens. Supported token types include:
+                <ul class="list-disc list-inside mt-2">
+                  <li><strong>KEYWORD:</strong> gimme, yo, keepdoing, say, nah</li>
+                  <li><strong>IDENTIFIER:</strong> Variables</li>
+                  <li><strong>NUMBER:</strong> Integer literals</li>
+                  <li><strong>COMPOP:</strong> Comparison operators (e.g., ==, !=, >, <)</li>
+                  <li><strong>STRING:</strong> Text literals enclosed in double quotes</li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td class="border border-gray-300 px-4 py-2">Parsing</td>
+              <td class="border border-gray-300 px-4 py-2">
+                Constructs an Abstract Syntax Tree (AST) from tokens. Key nodes include:
+                <ul class="list-disc list-inside mt-2">
+                  <li><strong>Declaration:</strong> Variable declarations</li>
+                  <li><strong>Condition:</strong> If-else statements</li>
+                  <li><strong>Loop:</strong> While loops</li>
+                  <li><strong>Expression:</strong> Arithmetic and logical operations</li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td class="border border-gray-300 px-4 py-2">Symbol Table Management</td>
+              <td class="border border-gray-300 px-4 py-2">
+                Manages variable declarations, assignments, and lookups. Throws errors for:
+                <ul class="list-disc list-inside mt-2">
+                  <li>Using undeclared variables</li>
+                  <li>Redeclaring existing variables</li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td class="border border-gray-300 px-4 py-2">Interpretation</td>
+              <td class="border border-gray-300 px-4 py-2">
+                Executes the AST by evaluating conditions, performing operations, and generating output.
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
-    </div>
+    </section>
+
+    <!-- Grammar Rules -->
+    <section class="mb-8">
+      <h2 class="text-3xl font-semibold text-gray-700 mb-4">Grammar Rules</h2>
+      <div class="bg-white shadow-md rounded-lg p-6">
+        <ul class="list-decimal list-inside text-gray-600">
+          <li><code>stmt → VAR_DECL | COND_STMT | PRINT_STMT | LOOP</code></li>
+          <li><code>VAR_DECL → "gimme" IDENTIFIER "=" EXPR</code></li>
+          <li><code>COND_STMT → "yo" "(" COND ")" "{" STMTS "}" ["nah" "{" STMTS "}"]</code></li>
+          <li><code>PRINT_STMT → "say" STRING_LITERAL</code></li>
+          <li><code>LOOP → "keepdoing" "(" COND ")" "{" STMTS "}"</code></li>
+          <li><code>EXPR → TERM {OP TERM}</code></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Example Programs -->
+    <section>
+      <h2 class="text-3xl font-semibold text-gray-700 mb-4">Example Programs</h2>
+      <div class="bg-white shadow-md rounded-lg p-6">
+        <pre class="bg-gray-100 p-4 rounded text-gray-800">
+<code>gimme x = 10;
+gimme y = 20;
+yo (x < y) {
+  say "x is less than y";
+} nah {
+  say "x is not less than y";
+}
+</code>
+        </pre>
+      </div>
+    </section>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'DocumentationView',
-}
+  name: "DocumentationView",
+};
 </script>
+
+<style>
+/* Additional Tailwind-based styling can be added if necessary */
+</style>

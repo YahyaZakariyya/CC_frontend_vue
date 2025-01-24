@@ -7,7 +7,7 @@
           {{ error }}
         </div>
         <div v-else-if="data" class="tree-container">
-          <TreeNode :node="data" />
+          <TreeNode :node="data.parse_tree" />
         </div>
         <div v-else class="text-gray-500 italic">Compile your code to see the parse tree</div>
       </div>
