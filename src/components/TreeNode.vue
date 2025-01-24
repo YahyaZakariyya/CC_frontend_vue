@@ -4,8 +4,9 @@
       class="node-content p-2 bg-gray-50 rounded border border-gray-200 hover:bg-gray-100 cursor-pointer"
       @click="toggleExpanded"
     >
-      <span class="font-medium">{{ nodeType }}</span>
-      <span v-if="nodeValue" class="ml-2 text-gray-600">: {{ nodeValue }}</span>
+    <span class="font-medium">{{ node.type || node.nodeType }}</span>
+    <span v-if="node.identifier" class="ml-2 text-gray-600">: {{ node.identifier }}</span>
+    <span v-else-if="node.value" class="ml-2 text-gray-600">: {{ node.value }}</span>
     </div>
     <div v-if="expanded" class="children ml-6 mt-2 border-l-2 border-gray-200 pl-4">
       <div v-for="(child, key) in children" :key="key" class="mt-2">
